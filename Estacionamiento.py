@@ -49,6 +49,8 @@ class VehiculoCliente():
         self.marca = list()
         self.modelo = list()
         self.tipo_vehiculo = list()
+        self.hora_entrada = list()
+        self.estado = list()
         self.opcion = {"1": self.ingreso_vehiculo(),
                      "2": self.salida_vehiculo(),
                      "3": self.buscar(),
@@ -62,6 +64,8 @@ class VehiculoCliente():
         self.marca.append(input("\nMarca: "))
         self.modelo.append(input("\nModelo: "))
         self.tipo_vehiculo.append(input("\nTipo de vehiculo: "))
+        self.hora_entrada.append(datetime.now)
+        self.estado.append('True')
         self.enter()
     
     def salida_vehiculo(self):
@@ -70,7 +74,7 @@ class VehiculoCliente():
 
     def buscar(self):
         """Busca un vehiculo por el numero de placa"""
-        
+
 
     def reporte_diario(self):
         """Muestra el reporte diario de los vehiculos que ingresaron al estacionamiento"""
@@ -80,4 +84,21 @@ class VehiculoCliente():
         """Finaliza el programa"""
         print("Gracias por utilizar nuestro sistema")
         sys.exit
-    
+
+
+    def Run(self):
+        """ """
+        while True:
+            self.Menu()
+            choice = input("\nIngrese una opcion: ")
+            action = self.opcion.get(choice)
+            if action: 
+                action()
+            else:
+                print("\nOpcion no valida")
+                self.enter
+
+
+if __name__ == "__main__":
+    vehiculo = VehiculoCliente()
+    vehiculo.Run()
