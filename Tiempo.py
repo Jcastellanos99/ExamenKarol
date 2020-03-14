@@ -18,11 +18,14 @@ class Tiempo():
         en el estacionamiento y el total a pagar
         """
         if self.horas > 1:
-            if self.tipo_vehiculo = 1:
+            if self.tipo_vehiculo == "Automovil":
                 self.subtotal = 20 * 0.20 - 20
                 self.pagar = (horas - 1) * self.subtotal +20
-            elif self.tipo_vehiculo = 2:
+            elif self.tipo_vehiculo == "Motocicleta":
                 self.subtotal = 10 * 0.10 - 10
                 self.pagar = (horas - 1 ) * self.subtotal + 10 
-
-            
+            else:
+                print("Tipo de vehiculo no valido")
+    
+    def Hora_Salida(self):
+        hora_salida = datetime.now + timedelta(hora=5)
