@@ -50,7 +50,6 @@ class VehiculoCliente():
         self.modelo = list()
         self.tipo_vehiculo = list()
         self.hora_entrada = list()
-        self.estado = list()
         self.opcion = {"1": self.ingreso_vehiculo(),
                      "2": self.salida_vehiculo(),
                      "3": self.buscar(),
@@ -65,15 +64,21 @@ class VehiculoCliente():
         self.modelo.append(input("\nModelo: "))
         self.tipo_vehiculo.append(input("\nTipo de vehiculo: "))
         self.hora_entrada.append(datetime.now)
-        self.estado.append('True')
+        self.estado = True
         self.enter()
     
     def salida_vehiculo(self):
         """Ingresa la salida de un vehiculo y muestra los datos correspondientes del ticket"""
 
 
-    def buscar(self):
+    def buscar(self, file_filter=""):
         """Busca un vehiculo por el numero de placa"""
+        if file_filter == " ":
+            file_filter = input("Ingrese el numero de placa"):
+        
+        for x range(len(self.vehiculo)):
+
+
 
 
     def reporte_diario(self):
